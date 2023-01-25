@@ -1,13 +1,24 @@
+#ifndef HashTable_h
+#define HashTable_h
+#include <iostream>
 #include "LinkedList.h"
+
+using std::cout; using std::endl;
 
 class HashTable {
 
 private:
 
-    LinkedList* linkedListArr;
+    LinkedList *linkedListArr;
     int arrSize;
 
 public:
+
+    // unspecified size of hash table defaults to 50;
+    HashTable () {
+        arrSize = 50;
+        linkedListArr = (LinkedList*)calloc(arrSize, sizeof(LinkedList));
+    }
 
     HashTable (int arrSz) {
         arrSize = arrSz;
@@ -23,7 +34,13 @@ public:
     void insertToHashTable(string str) {
         int hash = getHash(str);
         (*(linkedListArr+hash)).insertNode(str);
-        linkedListArr[hash].printList();
+    }
+
+    LinkedList getFromHashTable(string str) {
+        int hash = getHash(str);
+        return (*(linkedListArr+hash));
     }
 
 };
+
+#endif

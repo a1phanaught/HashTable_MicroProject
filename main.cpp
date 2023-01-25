@@ -1,6 +1,6 @@
 #include <iostream>
 #include "HashTable.h"
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+#include "LinkedList.h"
 
 using std::cout; using std::string;
 
@@ -9,6 +9,12 @@ int main() {
 	HashTable *hashTable = new HashTable(100);
 
 	hashTable->insertToHashTable("Ada");
+	
+	hashTable->insertToHashTable("adA");
+	LinkedList *linkedList =  new LinkedList();
+	*linkedList = hashTable->getFromHashTable("adA");
+
+	(*linkedList).printList();
 
 	return 0;
 }

@@ -1,3 +1,5 @@
+#ifndef LinkedList_h
+#define LinkedList_h
 #include <iostream>
 
 using std::cout; using std::string; using std::endl;
@@ -147,3 +149,5 @@ void LinkedList::printList()
         temp = temp->next;
     }
 }
+
+#endif
