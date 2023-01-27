@@ -1,6 +1,7 @@
 #ifndef LinkedList_h
 #define LinkedList_h
 #include <iostream>
+#include "Person.h"
 
 using std::cout; using std::string; using std::endl;
  
@@ -8,20 +9,20 @@ using std::cout; using std::string; using std::endl;
 // a node of the linked list.
 class Node {
 public:
-    string data;
+    Person *data = new Person();
     Node* next;
  
     // Default constructor
-    Node()
+    /*Node()
     {
-        data = "";
+        data = NULL;
         next = NULL;
-    }
+    }*/
  
     // Parameterised Constructor
-    Node(string data)
+    Node(Person person)
     {
-        this->data = data;
+        *data = person;
         this->next = NULL;
     }
 };
@@ -38,7 +39,7 @@ public:
     // Function to insert a
     // node at the end of the
     // linked list.
-    void insertNode(string);
+    void insertNode(Person);
  
     // Function to print the
     // linked list.
@@ -108,7 +109,7 @@ void LinkedList::deleteNode(int nodeOffset)
 }
  
 // Function to insert a new node.
-void LinkedList::insertNode(string data)
+void LinkedList::insertNode(Person data)
 {
     // Create the new Node.
     Node* newNode = new Node(data);
@@ -145,7 +146,7 @@ void LinkedList::printList()
  
     // Traverse the list.
     while (temp != NULL) {
-        cout << temp->data << " ";
+        cout << temp->data->name << " ";
         temp = temp->next;
     }
 }

@@ -2,6 +2,7 @@
 #define HashTable_h
 #include <iostream>
 #include "LinkedList.h"
+#include "Person.h"
 
 using std::cout; using std::endl;
 
@@ -31,13 +32,13 @@ public:
         return hash % arrSize;
     }
 
-    void insertToHashTable(string str) {
-        int hash = getHash(str);
-        (*(linkedListArr+hash)).insertNode(str);
+    void insertToHashTable(Person data) {
+        int hash = getHash(data.getName());
+        (*(linkedListArr+hash)).insertNode(data.getName());
     }
 
-    LinkedList getFromHashTable(string str) {
-        int hash = getHash(str);
+    LinkedList getFromHashTable(Person data) {
+        int hash = getHash(data.getName());
         return (*(linkedListArr+hash));
     }
 
