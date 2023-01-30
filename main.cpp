@@ -1,4 +1,5 @@
 #include <iostream>
+#include <conio.h>
 #include "HashTable.h"
 #include "LinkedList.h"
 #include "Person.h"
@@ -15,6 +16,9 @@ int main() {
 	*linkedList = hashTable->getFromHashTable(*firstPerson);
 
 	(*linkedList).printList();
+	
+	cout << endl << "Press any key to continue..." << endl;
+	getch();
 
 	return 0;
 }
