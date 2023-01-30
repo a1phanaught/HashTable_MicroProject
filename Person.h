@@ -10,34 +10,38 @@ class Person {
 
 private:
 
-public:
-	
-	string name;
+    // You can add more properties for a person
     int age;
     string gender;
 
+public:
+	
+    // Do not remove this as we need this for the hash table and name must be public because
+    // printList uses pointer to class. I will change this sooner or later.
+    string name;
+
     Person() {
-        this->name = "";
+        name = "";
         int age;
         gender = "";
     }
 
-    Person(string name) {
-        this->name = name;
+    Person(string newName) {
+        name = newName;
         int age = 0;
         gender = "";
     }
 
-    Person(string name, int age) {
-        this->name = name;
-        this->age = age;
+    Person(string newName, int newAge) {
+        name = newName;
+        age = newAge;
         gender = "";
     }
 
-    Person(string name, int age, string gender) {
-        this->name = name;
-        this->age = age;
-        this->gender = gender;
+    Person(string newName, int newAge, string setGender) {
+        name = newName;
+        age = newAge;
+        gender = setGender;
     }
 
     string getName();
