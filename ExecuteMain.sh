@@ -1,2 +1,3 @@
-g++ -o main.exe main.cpp
-./main.exe
+g++ -o main main.cpp
+chmod a+x main
+./main
