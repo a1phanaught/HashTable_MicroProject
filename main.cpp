@@ -1,5 +1,6 @@
 #include <iostream>
-#include <conio.h>
+// Do not use conio.h for Linux (it only works on Windows)
+//#include <conio.h>
 #include "HashTable.h"
 #include "LinkedList.h"
 #include "Person.h"
@@ -18,7 +19,7 @@ int main() {
 	(*linkedList).printList();
 	
 	cout << endl << "Press any key to continue..." << endl;
-	getch();
+	getchar();
 
 	return 0;
 }
